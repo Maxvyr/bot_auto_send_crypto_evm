@@ -1,0 +1,11 @@
+{
+  "name": "bot-widthraw-crypto",
+  "version": "1.0.0",
+  "description": "bot widthraw crypto for EVM",
+  "main": "index.js",
+  "author": "Maxvyr",
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^5.5.3"
+  }
+}
