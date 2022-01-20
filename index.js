@@ -1,9 +1,9 @@
 const { ethers } = require("ethers");
 
 const provider = new ethers.providers.JsonRpcProvider("RINKEBY URL"); //infura, alchemy ...
-const receiver = "Address receive Ether";
+const receiver = "Address receive"; //public key receviver
 
-const privateKeys = ["",""];
+const privateKeys = ["",""]; //private key all sender address
 
 //auto send value from this address to good one
 const botSend = async () => {
