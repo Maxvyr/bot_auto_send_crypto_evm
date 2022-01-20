@@ -1,4 +1,4 @@
-import { ethers } from "ethers"; 
+const { ethers } = require("ethers");
 
 const provider = new ethers.providers.JsonRpcProvider("RINKEBY URL"); //infura, alchemy ...
 const receiver = "Address receive Ether";
@@ -9,8 +9,8 @@ const privateKeys = ["",""];
 const botSend = async () => {
     provider.on("block", async () => {
         console.log("Listen New Block,🙈 waiting 🙈");
-        privateKeys.forEach((privateKey){
-            const _target = new ethers.Wallet(privateKey);
+        for (let i =0; i < privateKeys.length; i++) {
+            const _target = new ethers.Wallet(privateKeys[i]);
             const target = _target.connect(provider);
             const balance = await provider.getBalance(target.address); //balance wallet
             const tx = ethers.utils.parseEther(".005") //gas for transfer
@@ -27,7 +27,7 @@ const botSend = async () => {
                     console.error("error", e);
                 }
             }
-        });
+        };
     });
 }
 
